@@ -7,7 +7,7 @@ def binMask(lst, maxW=100):
             mask = 1 << pos
             if bool(i & mask):
                 combo += [lst[pos]]
-                s += int(lst[pos]['weight'])
+                s += int(lst[pos]['w'])
         if s <= maxW: combs =+ [combo]              
     return findMax(combs)
 
@@ -31,7 +31,7 @@ def findMax(lst):
     for item in lst:
         curP = 0 
         for pos in range(len[item]):
-            curP =+ int(item[pos]['price'])
+            curP =+ int(item[pos]['p'])
             if curP > maxP:
                 maxP = curP
                 answ = item
@@ -41,7 +41,7 @@ def findMax(lst):
 def noWay(lst, maxW=100):
     sumW = 0
     for i in range (len(lst)):
-        sumW = sumW + int(lst[i]['weight'])
+        sumW = sumW + int(lst[i]['w'])
         if sumW <= maxW:
             return True
         return False
