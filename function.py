@@ -2,6 +2,7 @@ def binMask(lst, maxW=100):
     combs = []
     n = len(lst)
     for i in range(1 << n):  # combo = 9 -> 1001
+        s = 0
         combo = []
         for pos in range(n):
             mask = 1 << pos
