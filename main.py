@@ -1,5 +1,5 @@
 from readerCsv import getLst
-from function import binMask, recSearch
+from function import binMask, recSearch, recSearchDeep
 
 def elemSum(lst):
     sumP = 0
@@ -14,7 +14,8 @@ def findAnsw(lst, maxW):
     print("Бин. маски:\n",answ,'\n',"Сумма:", elemSum(answ),'\n')
     answ = recSearch(lst, maxW)
     print("Рекурсия:\n",answ,'\n',"Сумма:", elemSum(answ),'\n')
-
+    answ = recSearchDeep(lst, maxW)
+    print("Поиск в глубину:\n",answ,'\n',"Сумма:", elemSum(answ),'\n')
 
 
 lst = getLst('./numbers.csv')
