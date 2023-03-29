@@ -25,7 +25,18 @@ def recSearch(lst, maxW=100):
             rec([], 0)
             return findMax(combs)
 
-
+def recSearchDeep(lst, maxW=100):
+    def rec(combo, deep):
+        if deep == len(lst):  # точка останова
+            if (noWay(combo, maxW)):
+                combs.append(combo)
+        else:  # шаги рекурсии
+            rec(combo+[lst[deep]], deep+1)
+            rec(combo, deep+1)
+    combs = []
+    rec([], 0)
+    return combs[0]
+        
 def findMax(lst):
     maxP = 0
     answ =[]
