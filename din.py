@@ -13,7 +13,7 @@ maxW = 100
 for elm in lst:
     items.append(list(map(int,elm[0].split(';')))[1:])
 items = sorted(items)
-count = len(items)
+print(items)
 count = len(items)
 max_w = 100
 step = 10
